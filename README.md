@@ -1,10 +1,13 @@
 # LM4CP
-LM sinh lời giải: 
+## LM sinh lời giải: 
+
 chmod +x generator.sh
+
 ./generator.sh
 
 
-Chạy trình chấm ioi:
+## Chạy trình chấm ioi:
+
 cd run_tests
 
 sudo docker rm -f piston_worker0
