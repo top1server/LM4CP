@@ -7,11 +7,13 @@ chmod +x generator.sh
 
 
 ## Chạy trình chấm ioi:
+clone huggingface/ioi: git clone https://github.com/huggingface/ioi.git
 
 cd run_tests
 
 sudo docker rm -f piston_worker0
 
+### Khởi tạo piston chấm bài 
 sudo docker run -d \
   --name piston_worker0 \
   -v "$PWD/piston_packages:/piston/packages" \
@@ -37,7 +39,7 @@ curl -X POST http://localhost:2000/api/v2/packages \
 
 export PISTON_ENDPOINTS=http://localhost:2000/api/v2
 
-
+### Chấm bài + up lên huggingface 
 python tests_runner.py \
   tiendung6b/qwen3-4b-instruct-2507-ioi_2024_4k \
   tiendung6b/qwen3-4b-instruct-2507-ioi_2024_4k-results \
